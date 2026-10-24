@@ -2,9 +2,6 @@
 
 ## Overview
 
-This repository contains my individual iOS implementation of NurseAssist, a
-Flutter-based wound assessment and clinical management application.
-
 NurseAssist helps healthcare staff capture wound images, analyse wound type
 and severity, manage patient records, and save assessment results for later
 review. The Android implementation is maintained separately and is not
