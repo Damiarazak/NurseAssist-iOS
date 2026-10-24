@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ADMIN/Desktop/Backup/Desktop/class/UG/FYP/**)",
+      "Bash(python -c \":*)",
+      "Bash(python3 -c \":*)",
+      "Bash(flutter analyze:*)",
+      "Bash(copy \"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\Backup\\\\Desktop\\\\class\\\\UG\\\\FYP\\\\nurseassist dupe\\\\.claude\\\\worktrees\\\\focused-noether\\\\lib\\\\screens\\\\analysis_results_screen.dart\" \"C:\\\\Users\\\\ADMIN\\\\Desktop\\\\Backup\\\\Desktop\\\\class\\\\UG\\\\FYP\\\\nurseassist dupe\\\\lib\\\\screens\\\\analysis_results_screen.dart\")"
+    ]
+  }
+}
