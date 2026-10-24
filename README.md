@@ -1,183 +1,109 @@
-# **NurseAssist – Mobile Wound Management Assistant**
+# NurseAssist – iOS Wound Management Application
 
-## 📌 **1. Project Ideation & Initiation**
+## About this repository
 
-### **1.1 Mobile App Details**
+This repository contains my individual iOS implementation of NurseAssist, a
+Flutter-based wound assessment and clinical management application.
 
-#### **a. Title**
+The iOS version allows healthcare staff to:
 
-**NurseAssist – Smart Wound Management App**
+- Manage patient records
+- Capture wound images
+- Analyse wounds using the integrated wound classification workflow
+- Review wound characteristics and severity
+- Record wound management information
+- Save assessments to Firebase
+- Review and update assessment results
 
-#### **b. Group Member Details**
+The Android implementation is maintained separately by another team member
+and is not included in this repository.
 
-| No | Name              | Matric No.          |   Assigned Tasks                                       |
-| -- | -----------       | ------------------- | ------------------------------------------------------ |
-| 1  | Siti Damia        | 2210034             |  Ideation + UI (creative + medium workload)            |
-| 2  | Puteri Anis       | 2218000             |  Requirements + backend planning                       |
-| 3  | Nabila Radiah     | 2213554             |  Diagrams + planning (logical & documentation-based)   |
+## My iOS work
 
----
+This repository covers the iOS project setup and implementation, including:
 
-### **c. Background of the Problem**
+- Flutter application code used by the iOS app
+- iOS project configuration and Xcode integration
+- Firebase integration for iOS
+- iOS image capture and image upload workflow
+- iOS wound assessment screens and services
+- iOS testing and device deployment
 
-Nurses handle multiple patients daily, and wound management requires careful attention, accurate assessment, and consistent monitoring. In busy clinical environments, manual documentation and delayed assessments can reduce care quality. Common challenges include:
+## Project structure
 
-* Difficulty identifying wound type accurately
-* Time-consuming manual documentation
-* Lack of standardized treatment suggestions
-* Limited ability to track and compare wound healing progress
+```text
+ios/       iOS and Xcode project files
+lib/       Flutter application code
+assets/    Application assets and machine-learning files
+test/      Flutter tests
+```
 
-A mobile app that analyzes wounds and recommends treatments can significantly improve workflow, accuracy, and patient outcomes.
+## Requirements
 
----
+- macOS
+- Xcode
+- Flutter SDK
+- CocoaPods
+- An iOS device or simulator
 
-### **d. Purpose / Objectives**
+## Setup
 
-NurseAssist aims to:
+Clone the repository and install the dependencies:
 
-* Provide **accurate wound classification** using image recognition
-* Offer **instant treatment suggestions** such as cleaning steps and dressing materials
-* Enable nurses to **track healing progress** with visual history
-* Maintain **secure patient and wound records**
-* Improve workflow efficiency via reminders and notifications
+```bash
+git clone https://github.com/Damiarazak/NurseAssist-iOS.git
+cd NurseAssist-iOS
+flutter pub get
+cd ios
+pod install
+cd ..
+```
 
----
+Open the iOS workspace in Xcode:
 
-### **e. Target Users**
+```bash
+open ios/Runner.xcworkspace
+```
 
-* Nurses in hospitals and clinics
-* Nursing students
-* Healthcare assistants involved in wound care
-* Medical practitioners needing quick assessments
+Create a local `.env` file from `.env.example` when required. Do not commit
+`.env` or any private credentials.
 
-Typical environments: hospital wards, outpatient clinics, emergency rooms, and home-care visits.
+## Run the iOS application
 
----
+List available devices:
 
-### **f. Preferred Platform**
+```bash
+flutter devices
+```
 
-**Primary Platform:** Android
-**Future Support:** iOS (planned)
+Run the application on a connected iOS device or simulator:
 
----
+```bash
+flutter run -d <device-id>
+```
 
-### **g. Features & Functionalities**
+## Validate the project
 
-1. **Wound Image Capture**
-   Capture or upload wound images for analysis.
+```bash
+flutter analyze
+flutter test
+```
 
-2. **Automatic Wound Classification**
-   AI identifies wound type and severity.
+## Firebase
 
-3. **Treatment Suggestions**
-   Recommended cleaning steps and suitable dressing materials.
+The iOS Firebase configuration is located at:
 
-4. **Healing Progress Monitoring**
-   Timeline view and comparison of wound changes over time.
+```text
+ios/Runner/GoogleService-Info.plist
+```
 
-5. **Patient Records System**
-   Secure storage of patient profiles and wound histories.
+Firestore and Storage rules are stored in:
 
-6. **Notifications & Reminders**
-   Alerts for dressing changes, follow-up checks, and overdue tasks.
-
----
-
-## 🌐 **1.2 Justification of the Proposed App**
-
-Wound management is a critical nursing responsibility. Existing solutions are limited, costly, or not localized. Most apps do not combine:
-
-* AI wound classification
-* Tailored treatment recommendations
-* Full patient record management
-* Healing progress tracking
-
-NurseAssist fills this gap by offering a comprehensive, AI-driven, affordable tool designed specifically for nurses and healthcare workers.
-
----
-
-# 📊 **2. Requirement Analysis & Planning**
-
-## **2.1 Technical Feasibility**
-
-### **Backend Structure**
-
-* REST API for AI image classification
-* Authentication API for secure login
-* CRUD operations for:
-
-  * Patient profiles
-  * Wound records
-  * Healing progress images
-  * AI-generated recommendations
-
----
-
-### **Database Design (CRUD)**
-
-* **Patient**
-* **WoundRecord**
-* **HealingProgress**
-* **Recommendations**
-
----
-
-### **Data Storage**
-
-* **Firebase Storage** → Image files
-* **MySQL / Firebase Firestore** → Patient, wound, and treatment data
-
----
-
-
-
-### **a. Platform Compatibility**
-
-* Android smartphones
-* Android tablets used in medical environments
-* Future iOS compatibility
-* Works with various camera sensors and resolutions
-
----
-
-# 🎨 **3. Project Design**
-
-## **3.1 User Interface (UI)**
-
-UI principles:
-
-* Clean, minimal, medical-friendly color palette
-* Large buttons for ease of use
-* Fast access to camera
-* Consistent layout and typography
-* Mobile-first responsive design
-
----
-
-## **3.2 User Experience (UX)**
-
-Designed for speed and simplicity:
-
-1. Home
-2. Capture Image
-3. View AI Result
-4. Save to Patient Record
-
-Smooth navigation ensures nurses can work efficiently even under pressure.
-
----
-
-## **3.3 Consistency**
-
-* Hospital-safe color scheme (blue/white/green)
-* Consistent form fields and button styles
-* Standard spacing and card components
-
----
-
-# 📚 **References**
-
-# Updated Week 1 progress
-
-
-
+```text
+firestore.rules
+storage.rules
+```
+
+Firebase rules should only be deployed by an authorized project
+administrator. Passwords, API tokens, service account keys, `.env`, and other
+private credentials must not be committed.
