@@ -21,6 +21,13 @@ application.
 The application is intended to support healthcare staff in assessment and
 documentation. It does not replace professional clinical judgement.
 
+#### **b. Project Scope**
+
+NurseAssist is developed as a mobile application with shared Flutter
+application code and separate platform implementations. This repository is
+the general project workspace; platform-specific work may be maintained in
+separate repositories.
+
 ## Main features
 
 - Staff authentication and role-based access
@@ -167,6 +174,12 @@ test/      Flutter tests
 
 Android platform files are maintained in a separate repository.
 
+### **f. Supported Platforms**
+
+NurseAssist supports Android and iOS through Flutter. The platform
+implementations may be maintained separately while sharing the application
+models, screens, services, and assets.
+
 ## Requirements
 
 - macOS
@@ -216,6 +229,96 @@ Run analysis and tests:
 flutter analyze
 flutter test
 ```
+
+Wound management is a critical nursing responsibility. Existing solutions are limited, costly, or not localized. Most apps do not combine:
+
+* AI wound classification
+* Tailored treatment recommendations
+* Full patient record management
+* Healing progress tracking
+
+NurseAssist fills this gap by offering a comprehensive, AI-driven, affordable tool designed specifically for nurses and healthcare workers.
+
+---
+
+# 📊 **2. Requirement Analysis & Planning**
+
+## **2.1 Technical Feasibility**
+
+### **Backend Structure**
+
+* REST API for AI image classification
+* Authentication API for secure login
+* CRUD operations for:
+
+  * Patient profiles
+  * Wound records
+  * Healing progress images
+  * AI-generated recommendations
+
+---
+
+### **Database Design (CRUD)**
+
+* **Patient**
+* **WoundRecord**
+* **HealingProgress**
+* **Recommendations**
+
+---
+
+### **Data Storage**
+
+* **Firebase Storage** → Image files
+* **MySQL / Firebase Firestore** → Patient, wound, and treatment data
+
+---
+
+
+
+### **a. Platform Compatibility**
+
+* Android smartphones
+* Android tablets used in medical environments
+* Future iOS compatibility
+* Works with various camera sensors and resolutions
+
+---
+
+# 🎨 **3. Project Design**
+
+## **3.1 User Interface (UI)**
+
+UI principles:
+
+* Clean, minimal, medical-friendly color palette
+* Large buttons for ease of use
+* Fast access to camera
+* Consistent layout and typography
+* Mobile-first responsive design
+
+---
+
+## **3.2 User Experience (UX)**
+
+Designed for speed and simplicity:
+
+1. Home
+2. Capture Image
+3. View AI Result
+4. Save to Patient Record
+
+Smooth navigation ensures nurses can work efficiently even under pressure.
+
+---
+
+## **3.3 Consistency**
+
+* Hospital-safe color scheme (blue/white/green)
+* Consistent form fields and button styles
+* Standard spacing and card components
+
+---
 
 ## Firebase rules
 
