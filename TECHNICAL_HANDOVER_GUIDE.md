@@ -376,22 +376,4 @@ For a model or platform change, also test on a real Android/iOS device.
 | Approval does not copy an image | Function deployed, correct region/project, valid Storage URL, Functions logs |
 | Firestore query asks for an index | Add the suggested index to `firestore.indexes.json`, then deploy Firestore indexes |
 
-## 11. Suggested handover demonstration
 
-When explaining the project, demonstrate this sequence instead of opening files
-randomly:
-
-1. Show the repository map and `pubspec.yaml`.
-2. Run the app and explain splash → login → dashboard.
-3. Register a test nurse account and verify the email.
-4. Show the Staff ID lookup and role documents in Firestore.
-5. Create/select a test patient.
-6. Capture a non-identifying wound image and show the analysis guard.
-7. Save the assessment and show the Storage path plus Firestore document.
-8. Correct the predicted wound type as the clinician.
-9. Switch to a lecturer/admin test account and approve it.
-10. Show the Cloud Function log and the copied training path.
-11. Explain which files students should change for UI, data, Firebase, and ML.
-12. Finish with the security warning and backup/credential ownership.
-
-Use synthetic test patients and non-identifying images for demonstrations.
